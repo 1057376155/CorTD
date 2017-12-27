@@ -1,0 +1,46 @@
+{
+    "name": "cortd",
+    "displayName": "cortd",
+    "description": "一个辅助写注释的插件",
+    "version": "0.0.1",
+    "icon": "image/logo.png",
+    "publisher": "cor",
+    "engines": {
+        "vscode": "^1.19.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.triggerDown",
+        "onCommand:extension.triggerUp"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+        ],
+        "keybindings": [
+            {
+            "command": "extension.triggerDown",
+            "key": "ctrl+down"
+            },
+            {
+            "command": "extension.triggerUp",
+            "key": "ctrl+up"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
